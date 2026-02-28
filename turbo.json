@@ -17,15 +17,5 @@
       "cache": false,
       "persistent": true
     }
-  },
-  "pipeline": {
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "start": {
-      "dependsOn": [],
-      "outputs": []
-    }
   }
 }

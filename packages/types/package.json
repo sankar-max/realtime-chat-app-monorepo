@@ -1,5 +1,5 @@
 {
-  "name": "@chat/config",
+  "name": "@chat/types",
   "version": "0.1.0",
   "private": true,
   "main": "./src/index.ts",
@@ -10,8 +10,5 @@
   "scripts": {
     "lint": "biome check . --write",
     "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "zod": "^4.3.6"
   }
 }

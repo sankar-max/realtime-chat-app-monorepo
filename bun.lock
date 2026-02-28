@@ -11,9 +11,11 @@
       },
     },
     "apps/backend": {
-      "name": "@chat/backend",
+      "name": "backend",
       "version": "0.1.0",
       "dependencies": {
+        "@chat/config": "workspace:*",
+        "@chat/types": "workspace:*",
         "hono": "latest",
       },
       "devDependencies": {
@@ -42,6 +44,13 @@
     },
     "packages/config": {
       "name": "@chat/config",
+      "version": "0.1.0",
+      "dependencies": {
+        "zod": "^4.3.6",
+      },
+    },
+    "packages/types": {
+      "name": "@chat/types",
       "version": "0.1.0",
     },
     "packages/typescript-config": {
@@ -72,9 +81,9 @@
 
     "@biomejs/cli-win32-x64": ["@biomejs/cli-win32-x64@2.4.4", "", { "os": "win32", "cpu": "x64" }, "sha512-gnOHKVPFAAPrpoPt2t+Q6FZ7RPry/FDV3GcpU53P3PtLNnQjBmKyN2Vh/JtqXet+H4pme8CC76rScwdjDcT1/A=="],
 
-    "@chat/backend": ["@chat/backend@workspace:apps/backend"],
-
     "@chat/config": ["@chat/config@workspace:packages/config"],
+
+    "@chat/types": ["@chat/types@workspace:packages/types"],
 
     "@chat/ui": ["@chat/ui@workspace:packages/ui"],
 
@@ -160,6 +169,8 @@
 
     "@types/react-dom": ["@types/react-dom@19.2.2", "", { "peerDependencies": { "@types/react": "^19.2.0" } }, "sha512-9KQPoO6mZCi7jcIStSnlOWn2nEF3mNmyr3rIAsGnAbQKYbRLyqmeSc39EVgtxXVia+LMT8j3knZLAZAh+xLmrw=="],
 
+    "backend": ["backend@workspace:apps/backend"],
+
     "baseline-browser-mapping": ["baseline-browser-mapping@2.10.0", "", { "bin": { "baseline-browser-mapping": "dist/cli.cjs" } }, "sha512-lIyg0szRfYbiy67j9KN8IyeD7q7hcmqnJ1ddWmNt19ItGpNN64mnllmxUNFIOdOm6by97jlL6wfpTTJrmnjWAA=="],
 
     "bun-types": ["bun-types@1.3.9", "", { "dependencies": { "@types/node": "*" } }, "sha512-+UBWWOakIP4Tswh0Bt0QD0alpTY8cb5hvgiYeWCMet9YukHbzuruIEeXC2D7nMJPB12kbh8C7XJykSexEqGKJg=="],
@@ -217,5 +228,7 @@
     "undici-types": ["undici-types@6.21.0", "", {}, "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="],
 
     "web": ["web@workspace:apps/web"],
+
+    "zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@chat/backend",
+  "name": "backend",
   "version": "0.1.0",
   "module": "index.ts",
   "type": "module",
@@ -11,7 +11,9 @@
     "lint:fix": "biome check --write ."
   },
   "dependencies": {
-    "hono": "latest"
+    "hono": "latest",
+    "@chat/config": "workspace:*",
+    "@chat/types": "workspace:*"
   },
   "devDependencies": {
     "@types/bun": "latest"

@@ -57,10 +57,14 @@ app.notFound((c) => {
   return c.json({ success: false, error: "Not Found" }, 404)
 })
 
+import authRouter from "./routes/auth"
+
 // Routes
 app.get("/", (c) => {
   return c.text(`Hello from Moreno Backend! (${config.nodeEnv} mode)`)
 })
+
+app.route("/api/auth", authRouter)
 
 app.get("/health", (c) => {
   return c.json({

@@ -1,4 +1,4 @@
-import { pgTable, text, varchar, timestamp } from "drizzle-orm/pg-core"
+import { pgTable, text, varchar, timestamp, boolean } from "drizzle-orm/pg-core"
 import { users } from "./users"
 import { rooms } from "./rooms"
 
@@ -11,6 +11,15 @@ export const messages = pgTable("messages", {
   roomId: varchar("room_id", { length: 255 })
     .notNull()
     .references(() => rooms.id, { onDelete: "cascade" }),
+  replyToId: varchar("reply_to_id", { length: 255 }).references(
+    (): any => messages.id,
+    { onDelete: "set null" },
+  ),
+  type: varchar("type", { length: 50 }).default("text").notNull(),
+  isDeletedForEveryone: boolean("is_deleted_for_everyone")
+    .default(false)
+    .notNull(),
+  editedAt: timestamp("edited_at"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 })

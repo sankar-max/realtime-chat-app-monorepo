@@ -8,7 +8,7 @@ export const env = createEnv({
       .enum(["development", "production", "test"])
       .default("development"),
     JWT_SECRET: z.string().min(1).default("secret"),
-    // DATABASE_URL: z.string().url(),
+    DATABASE_URL: z.string().url(),
   },
   runtimeEnv: process.env,
   emptyStringAsUndefined: true,
@@ -20,5 +20,5 @@ export const config = {
   isDev: env.NODE_ENV === "development",
   nodeEnv: env.NODE_ENV,
   jwtSecret: env.JWT_SECRET,
-  // Later add more
+  databaseUrl: env.DATABASE_URL,
 } as const

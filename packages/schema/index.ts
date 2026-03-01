@@ -11,5 +11,8 @@ export const loginSchema = z.object({
   password: z.string().min(6),
 })
 
+// Export our Drizzle database schemas
+export * from "./src"
+
 // 🌟 THE MAGIC: Re-export EVERYTHING from Zod 🌟
 export * from "zod"
